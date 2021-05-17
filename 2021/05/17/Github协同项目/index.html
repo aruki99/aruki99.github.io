@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Github协同项目基本操作新手建议使用Github Desktop可视化工具 教学视频 B站：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV18C4y1t7Zq&#x2F; Github Desktop使用先去 https:&#x2F;&#x2F;desktop.github.com&#x2F; 官网下载可视化工具Desktop  安装完成后登入自己的GitHub账号，即可连接GitHub中的远程仓库。   创建一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2021/05/17/Github%E5%8D%8F%E5%90%8C%E9%A1%B9%E7%9B%AE/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Github协同项目基本操作新手建议使用Github Desktop可视化工具 教学视频 B站：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV18C4y1t7Zq&#x2F; Github Desktop使用先去 https:&#x2F;&#x2F;desktop.github.com&#x2F; 官网下载可视化工具Desktop  安装完成后登入自己的GitHub账号，即可连接GitHub中的远程仓库。   创建一">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:/Users/喻嘉兴/AppData/Roaming/Typora/typora-user-images/image-20200817110420746.png">
+<meta property="og:image" content="c:/Users/喻嘉兴/AppData/Roaming/Typora/typora-user-images/image-20200817100848537.png">
+<meta property="og:image" content="c:/Users/喻嘉兴/AppData/Roaming/Typora/typora-user-images/image-20200817105027647.png">
+<meta property="og:image" content="c:/Users/喻嘉兴/AppData/Roaming/Typora/typora-user-images/image-20200817105419150.png">
+<meta property="og:image" content="c:/Users/喻嘉兴/AppData/Roaming/Typora/typora-user-images/image-20200817105550486.png">
+<meta property="og:image" content="c:/Users/喻嘉兴/AppData/Roaming/Typora/typora-user-images/image-20200817105651931.png">
+<meta property="og:image" content="c:/Users/喻嘉兴/AppData/Roaming/Typora/typora-user-images/image-20200817105746313.png">
+<meta property="og:image" content="c:/Users/喻嘉兴/AppData/Roaming/Typora/typora-user-images/image-20200817105803602.png">
+<meta property="og:image" content="c:/Users/喻嘉兴/AppData/Roaming/Typora/typora-user-images/image-20200817105944267.png">
+<meta property="og:image" content="c:/Users/喻嘉兴/AppData/Roaming/Typora/typora-user-images/image-20200817110140410.png">
+<meta property="og:image" content="c:/Users/喻嘉兴/AppData/Roaming/Typora/typora-user-images/image-20200817111602396.png">
+<meta property="og:image" content="c:/Users/喻嘉兴/AppData/Roaming/Typora/typora-user-images/image-20200817111720890.png">
+<meta property="og:image" content="c:/Users/喻嘉兴/AppData/Roaming/Typora/typora-user-images/image-20200817111951299.png">
+<meta property="og:image" content="c:/Users/喻嘉兴/AppData/Roaming/Typora/typora-user-images/image-20200817112246166.png">
+<meta property="og:image" content="c:/Users/喻嘉兴/AppData/Roaming/Typora/typora-user-images/image-20200817112417017.png">
+<meta property="article:published_time" content="2021-05-17T03:37:15.215Z">
+<meta property="article:modified_time" content="2020-08-17T03:25:11.836Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/喻嘉兴/AppData/Roaming/Typora/typora-user-images/image-20200817110420746.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://example.com/2021/05/17/Github协同项目/"/>
+
+
+
+
+
+  <title> | Hexo</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/17/Github%E5%8D%8F%E5%90%8C%E9%A1%B9%E7%9B%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-17T11:37:15+08:00">
+                2021-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Github协同项目基本操作"><a href="#Github协同项目基本操作" class="headerlink" title="Github协同项目基本操作"></a>Github协同项目基本操作</h1><p>新手建议使用Github Desktop可视化工具</p>
+<p>教学视频 B站：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV18C4y1t7Zq/">https://www.bilibili.com/video/BV18C4y1t7Zq/</a></p>
+<h2 id="Github-Desktop使用"><a href="#Github-Desktop使用" class="headerlink" title="Github Desktop使用"></a>Github Desktop使用</h2><p>先去 <a target="_blank" rel="noopener" href="https://desktop.github.com/">https://desktop.github.com/</a> 官网下载可视化工具Desktop</p>
+<p><img src="C:\Users\喻嘉兴\AppData\Roaming\Typora\typora-user-images\image-20200817110420746.png" alt="image-20200817110420746"></p>
+<p>安装完成后登入自己的GitHub账号，即可连接GitHub中的远程仓库。</p>
+<p><img src="C:\Users\喻嘉兴\AppData\Roaming\Typora\typora-user-images\image-20200817100848537.png" alt="image-20200817100848537"></p>
+<ul>
+<li>创建一个教程存储库</li>
+<li>在互联网克隆一个仓库</li>
+<li>在你的硬盘上创建一个新的存储库</li>
+<li>从你的硬盘中添加一个现有的仓库</li>
+</ul>
+<h2 id="本地仓库更新上传远程"><a href="#本地仓库更新上传远程" class="headerlink" title="本地仓库更新上传远程"></a>本地仓库更新上传远程</h2><p>1、在本地仓库修改文件，新增文件（本次新增了“测试文件.txt”）</p>
+<p><img src="C:\Users\喻嘉兴\AppData\Roaming\Typora\typora-user-images\image-20200817105027647.png" alt="image-20200817105027647"></p>
+<p>2、在Desktop中即可发现变更</p>
+<p><img src="C:\Users\喻嘉兴\AppData\Roaming\Typora\typora-user-images\image-20200817105419150.png" alt="image-20200817105419150"></p>
+<p>3、即可点击上传文件，在GitHub远程仓库中即可发现新增文件</p>
+<p><img src="C:\Users\喻嘉兴\AppData\Roaming\Typora\typora-user-images\image-20200817105550486.png" alt="image-20200817105550486"></p>
+<h2 id="远程仓库更新至本地仓库"><a href="#远程仓库更新至本地仓库" class="headerlink" title="远程仓库更新至本地仓库"></a>远程仓库更新至本地仓库</h2><p>1、选择需要修改文件，并点击修改</p>
+<p><img src="C:\Users\喻嘉兴\AppData\Roaming\Typora\typora-user-images\image-20200817105651931.png" alt="image-20200817105651931"></p>
+<p>2、完成修改后点击提交变更</p>
+<img src="C:\Users\喻嘉兴\AppData\Roaming\Typora\typora-user-images\image-20200817105746313.png" alt="image-20200817105746313" style="zoom:67%;" />
+
+<img src="C:\Users\喻嘉兴\AppData\Roaming\Typora\typora-user-images\image-20200817105803602.png" alt="image-20200817105803602" style="zoom:50%;" />
+
+
+
+
+
+<p>3、提交后，回到Desktop点击Fetch origin</p>
+<p><img src="C:\Users\喻嘉兴\AppData\Roaming\Typora\typora-user-images\image-20200817105944267.png" alt="image-20200817105944267"></p>
+<p>4、即可发现远程仓库的变更，再次点击Fetch origin，即可将本地仓库同步远程仓库</p>
+<p><img src="C:\Users\喻嘉兴\AppData\Roaming\Typora\typora-user-images\image-20200817110140410.png" alt="image-20200817110140410"></p>
+<h2 id="新建仓库的连接"><a href="#新建仓库的连接" class="headerlink" title="新建仓库的连接"></a>新建仓库的连接</h2><p>1、输入新建仓库的名称，即可连接并完成本地仓库的创建</p>
+<p><img src="C:\Users\喻嘉兴\AppData\Roaming\Typora\typora-user-images\image-20200817111602396.png" alt="image-20200817111602396"></p>
+<p>2、本地GitHub仓库中即可发现新仓库</p>
+<p><img src="C:\Users\喻嘉兴\AppData\Roaming\Typora\typora-user-images\image-20200817111720890.png" alt="image-20200817111720890"></p>
+<p>3、点击进入仓库，在圈起的空白处即可添加修改文件，并通过Desktop同步至远程仓库</p>
+<p><img src="C:\Users\喻嘉兴\AppData\Roaming\Typora\typora-user-images\image-20200817111951299.png" alt="image-20200817111951299"></p>
+<h1 id="协同项目的管理者邀请"><a href="#协同项目的管理者邀请" class="headerlink" title="协同项目的管理者邀请"></a>协同项目的管理者邀请</h1><p>1、选择需要管理的仓库，点击setting→Manage access→Invite a collaborators</p>
+<p><img src="C:\Users\喻嘉兴\AppData\Roaming\Typora\typora-user-images\image-20200817112246166.png" alt="image-20200817112246166"></p>
+<p>2、并输入对方的用户名或者电子邮件，即可发出管理邀请</p>
+<p><img src="C:\Users\喻嘉兴\AppData\Roaming\Typora\typora-user-images\image-20200817112417017.png" alt="image-20200817112417017"></p>
+<pre><code> **最后等待对方同意即可**
+</code></pre>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/05/17/%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/" rel="next" title="文章标题">
+                <i class="fa fa-chevron-left"></i> 文章标题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/05/17/git%E8%AF%AD%E6%B3%95/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Github%E5%8D%8F%E5%90%8C%E9%A1%B9%E7%9B%AE%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">Github协同项目基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Github-Desktop%E4%BD%BF%E7%94%A8"><span class="nav-number">1.1.</span> <span class="nav-text">Github Desktop使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E6%9B%B4%E6%96%B0%E4%B8%8A%E4%BC%A0%E8%BF%9C%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">本地仓库更新上传远程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%9B%B4%E6%96%B0%E8%87%B3%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="nav-number">1.3.</span> <span class="nav-text">远程仓库更新至本地仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.4.</span> <span class="nav-text">新建仓库的连接</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%8F%E5%90%8C%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%A1%E7%90%86%E8%80%85%E9%82%80%E8%AF%B7"><span class="nav-number">2.</span> <span class="nav-text">协同项目的管理者邀请</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
