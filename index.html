@@ -359,199 +359,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/17/JDBC(java%E6%93%8D%E4%BD%9C%E6%8E%A7%E5%88%B6%E6%95%B0%E6%8D%AE%E5%BA%93)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/05/17/JDBC(java%E6%93%8D%E4%BD%9C%E6%8E%A7%E5%88%B6%E6%95%B0%E6%8D%AE%E5%BA%93)/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-17T11:37:15+08:00">
-                2021-05-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<h2 id="title-JDBc"><a href="#title-JDBc" class="headerlink" title="title:JDBc"></a>title:JDBc</h2><h1 id="JDBC-java操作控制数据库"><a href="#JDBC-java操作控制数据库" class="headerlink" title="JDBC(java操作控制数据库)"></a>JDBC(java操作控制数据库)</h1><h3 id="数据库驱动"><a href="#数据库驱动" class="headerlink" title="数据库驱动"></a>数据库驱动</h3><p>我们会通过数据库驱动，和数据库打交道</p>
-<h3 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h3><p>sum公司为了简化开发人员的（对数据库的统一）操作，提供了一个（Java操作数据库的规范） 俗称 JDBC</p>
-<p>规范由厂商去做</p>
-<p>对于开发人员来说，我们只需要掌握JDBC接口的操作即可!</p>
-<p>java.sql</p>
-<p>javax.sql</p>
-<h3 id="第一个JDBC程序"><a href="#第一个JDBC程序" class="headerlink" title="第一个JDBC程序"></a>第一个JDBC程序</h3><blockquote>
-<p>创建测试数据库</p>
-</blockquote>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE jdbcStudy <span class="type">CHARACTER</span> <span class="keyword">SET</span> utf8 <span class="keyword">COLLATE</span> utf8_general_ci;</span><br><span class="line"></span><br><span class="line">USE jdbcStudy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `users`(</span><br><span class="line">id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">NAME <span class="type">VARCHAR</span>(<span class="number">40</span>),</span><br><span class="line">PASSWORD <span class="type">VARCHAR</span>(<span class="number">40</span>),</span><br><span class="line">email <span class="type">VARCHAR</span>(<span class="number">60</span>),</span><br><span class="line">birthday <span class="type">DATE</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `users`(id,NAME,PASSWORD,email,birthday)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="number">1</span>,<span class="string">&#x27;zhansan&#x27;</span>,<span class="string">&#x27;123456&#x27;</span>,<span class="string">&#x27;zs@sina.com&#x27;</span>,<span class="string">&#x27;1980-12-04&#x27;</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="string">&#x27;lisi&#x27;</span>,<span class="string">&#x27;123456&#x27;</span>,<span class="string">&#x27;lisi@sina.com&#x27;</span>,<span class="string">&#x27;1981-12-04&#x27;</span>),</span><br><span class="line">(<span class="number">3</span>,<span class="string">&#x27;wangwu&#x27;</span>,<span class="string">&#x27;123456&#x27;</span>,<span class="string">&#x27;wangwu@sina.com&#x27;</span>,<span class="string">&#x27;1979-12-04&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<p>1、创建一个普通项目</p>
-<p>2、导入数据库驱动</p>
-<img src="C:\Users\喻嘉兴\AppData\Roaming\Typora\typora-user-images\image-20200810113936467.png" alt="image-20200810113936467" style="zoom: 150%;" />
-
-
-
-<p>3、编写测试代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> lesson01;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javafx.scene.control.SplitPane;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.sound.midi.MidiEvent;</span><br><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 我的第一个JDBC程序</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JDBCfristDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException, SQLException </span>&#123;</span><br><span class="line">        <span class="comment">//1、加载驱动</span></span><br><span class="line">        Class.forName(<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>); <span class="comment">//固定写法，加载驱动</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//2、用户信息和url</span></span><br><span class="line">        <span class="comment">//useUnicode=true   支持中文编码</span></span><br><span class="line">        <span class="comment">//&amp; characterEncoding=utf8  设定中文字符集优先</span></span><br><span class="line">        <span class="comment">// &amp; useSSL=ture    使用安全的连接</span></span><br><span class="line">        String url = <span class="string">&quot;jdbc:mysql://localhost:3306/jdbcstudy?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=ture&quot;</span>;</span><br><span class="line">        String username = <span class="string">&quot;root&quot;</span>;</span><br><span class="line">        String password = <span class="string">&quot;010412&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3、连接成功,数据库对象  Connection  代表数据库</span></span><br><span class="line">        Connection connection = DriverManager.getConnection(url, username, password);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4、执行sql语句 Statement   执行sql对象</span></span><br><span class="line">        Statement statement = connection.createStatement();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//5、z执行sql对象， 去 执行sql 可能存在结果，查看返回结果</span></span><br><span class="line">        String sql = <span class="string">&quot;SELECT * FROM users&quot;</span>;</span><br><span class="line"></span><br><span class="line">        ResultSet resultSet = statement.executeQuery(sql);<span class="comment">//返回的结果集,结果集中封装了我们全部的查询出来的结果</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (resultSet.next()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;id=&quot;</span> + resultSet.getObject(<span class="string">&quot;id&quot;</span>));</span><br><span class="line">            System.out.println(<span class="string">&quot;name=&quot;</span> + resultSet.getObject(<span class="string">&quot;NAME&quot;</span>));</span><br><span class="line">            System.out.println(<span class="string">&quot;pwd=&quot;</span> + resultSet.getObject(<span class="string">&quot;PASSWORD&quot;</span>));</span><br><span class="line">            System.out.println(<span class="string">&quot;email=&quot;</span> + resultSet.getObject(<span class="string">&quot;email&quot;</span>));</span><br><span class="line">            System.out.println(<span class="string">&quot;birth=&quot;</span> + resultSet.getObject(<span class="string">&quot;birthday&quot;</span>));</span><br><span class="line">            System.out.println(<span class="string">&quot;===============================================&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//6、释放连接</span></span><br><span class="line">        resultSet.close();</span><br><span class="line">        statement.close();</span><br><span class="line">        connection.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>步骤总结：</p>
-</blockquote>
-<p>1、加载驱动</p>
-<p>2、连接数据库DiverManager</p>
-<p>3、获得执行sql的对象    Statement</p>
-<p>4、获得返回的结果集</p>
-<p>5、释放连接</p>
-<blockquote>
-<p>DirverManaher</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//DriverManager.registerDriver(new com.mysql.jdbc.Driver());</span></span><br><span class="line"><span class="comment">// 原始写法</span></span><br><span class="line"></span><br><span class="line">Class.forName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);<span class="comment">//数据库8.0的用法</span></span><br><span class="line"><span class="comment">//Class.forName(&quot;com.mysql.jdbc.Driver&quot;); //固定写法，加载驱动（常用）数据库5.7的用法</span></span><br><span class="line"></span><br><span class="line">Connection connection = DriverManager.getConnection(url, username, password);</span><br><span class="line"><span class="comment">//connection	代表数据库</span></span><br><span class="line"><span class="comment">//数据库设置自动提交</span></span><br><span class="line"><span class="comment">//事务提交</span></span><br><span class="line"><span class="comment">//事务回滚</span></span><br><span class="line">connection.rollback();</span><br><span class="line">connection.commit();</span><br><span class="line">connection.setAutommit();ResultSet</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<blockquote>
-<p>URL</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String url = <span class="string">&quot;jdbc:mysql://localhost:3306/jdbcstudy?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=TRUE&quot;</span>;</span><br><span class="line"><span class="comment">//jdbc:mysql:协议名称</span></span><br><span class="line"><span class="comment">//mysql 默认端口 3306</span></span><br><span class="line"><span class="comment">//协议://主机地址：端口号/数据库名称？参数1&amp;参数2&amp;参数3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//oralce 默认端口 1521</span></span><br><span class="line"><span class="comment">//jdbc：oracle：thin：@localhost：1521：sid</span></span><br></pre></td></tr></table></figure>
-
-
-
-<blockquote>
-<p>Statement 执行sql对象    PrepareStatement执行sql的对象</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String sql = <span class="string">&quot;SELECT * FROM users&quot;</span>;<span class="comment">//编写sql</span></span><br><span class="line"></span><br><span class="line">statement.executeQuery();   <span class="comment">//查询操作返回 ResultSet</span></span><br><span class="line">statement.execute();        <span class="comment">//执行任何sql</span></span><br><span class="line">statement.executeUpdate();  <span class="comment">//更新、插入、删除。都是用这个，返回一个受影响的行数</span></span><br><span class="line">statement.executeBatch();   <span class="comment">//放多个sql同时执行</span></span><br></pre></td></tr></table></figure>
-
-
-
-<blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ResultSet 查询的结果集：封装了所有的查询结果集</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>获取指定的数据类型</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在不知道类型时使用getObject</span></span><br><span class="line">resultSet.getObject();</span><br><span class="line"><span class="comment">//在知道类型时使用指定类型</span></span><br><span class="line">resultSet.getString();</span><br><span class="line">resultSet.getInt();</span><br><span class="line">resultSet.getFloat();</span><br><span class="line">resultSet.getDouble();</span><br><span class="line">resultSet.getDate();</span><br><span class="line">.....</span><br></pre></td></tr></table></figure>
-
-
-
-<p>遍历、指针</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">resultSet.beforeFirst();    <span class="comment">//移动到最前面</span></span><br><span class="line">resultSet.afterLast();      <span class="comment">//移动到最后面</span></span><br><span class="line">resultSet.next();           <span class="comment">//移动到下一个</span></span><br><span class="line">resultSet.previous();       <span class="comment">//移动到前一行</span></span><br><span class="line">resultSet.absolute(row);    <span class="comment">//移动到指定行</span></span><br></pre></td></tr></table></figure>
-
-
-
-<blockquote>
-<p>释放资源</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//6、释放连接</span></span><br><span class="line">resultSet.close();</span><br><span class="line">statement.close();</span><br><span class="line">connection.close();</span><br></pre></td></tr></table></figure>
-
-
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/17/Java%E7%A8%8B%E5%BA%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1297,7 +1104,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/05/17/%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/" itemprop="url">文章标题</a></h1>
+                <a class="post-title-link" href="/2021/05/17/%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/" itemprop="url">JDBC</a></h1>
         
 
         <div class="post-meta">
@@ -1350,6 +1157,198 @@
         
           
             
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/17/JDBC(java%E6%93%8D%E4%BD%9C%E6%8E%A7%E5%88%B6%E6%95%B0%E6%8D%AE%E5%BA%93)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/05/17/JDBC(java%E6%93%8D%E4%BD%9C%E6%8E%A7%E5%88%B6%E6%95%B0%E6%8D%AE%E5%BA%93)/" itemprop="url">JDBC</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-17T11:03:31+08:00">
+                2021-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="JDBC-java操作控制数据库"><a href="#JDBC-java操作控制数据库" class="headerlink" title="JDBC(java操作控制数据库)"></a>JDBC(java操作控制数据库)</h1><h3 id="数据库驱动"><a href="#数据库驱动" class="headerlink" title="数据库驱动"></a>数据库驱动</h3><p>我们会通过数据库驱动，和数据库打交道</p>
+<h3 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h3><p>sum公司为了简化开发人员的（对数据库的统一）操作，提供了一个（Java操作数据库的规范） 俗称 JDBC</p>
+<p>规范由厂商去做</p>
+<p>对于开发人员来说，我们只需要掌握JDBC接口的操作即可!</p>
+<p>java.sql</p>
+<p>javax.sql</p>
+<h3 id="第一个JDBC程序"><a href="#第一个JDBC程序" class="headerlink" title="第一个JDBC程序"></a>第一个JDBC程序</h3><blockquote>
+<p>创建测试数据库</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE jdbcStudy <span class="type">CHARACTER</span> <span class="keyword">SET</span> utf8 <span class="keyword">COLLATE</span> utf8_general_ci;</span><br><span class="line"></span><br><span class="line">USE jdbcStudy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `users`(</span><br><span class="line">id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">NAME <span class="type">VARCHAR</span>(<span class="number">40</span>),</span><br><span class="line">PASSWORD <span class="type">VARCHAR</span>(<span class="number">40</span>),</span><br><span class="line">email <span class="type">VARCHAR</span>(<span class="number">60</span>),</span><br><span class="line">birthday <span class="type">DATE</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `users`(id,NAME,PASSWORD,email,birthday)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="number">1</span>,<span class="string">&#x27;zhansan&#x27;</span>,<span class="string">&#x27;123456&#x27;</span>,<span class="string">&#x27;zs@sina.com&#x27;</span>,<span class="string">&#x27;1980-12-04&#x27;</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="string">&#x27;lisi&#x27;</span>,<span class="string">&#x27;123456&#x27;</span>,<span class="string">&#x27;lisi@sina.com&#x27;</span>,<span class="string">&#x27;1981-12-04&#x27;</span>),</span><br><span class="line">(<span class="number">3</span>,<span class="string">&#x27;wangwu&#x27;</span>,<span class="string">&#x27;123456&#x27;</span>,<span class="string">&#x27;wangwu@sina.com&#x27;</span>,<span class="string">&#x27;1979-12-04&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>1、创建一个普通项目</p>
+<p>2、导入数据库驱动</p>
+<img src="C:\Users\喻嘉兴\AppData\Roaming\Typora\typora-user-images\image-20200810113936467.png" alt="image-20200810113936467" style="zoom: 150%;" />
+
+
+
+<p>3、编写测试代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> lesson01;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javafx.scene.control.SplitPane;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.sound.midi.MidiEvent;</span><br><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 我的第一个JDBC程序</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JDBCfristDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException, SQLException </span>&#123;</span><br><span class="line">        <span class="comment">//1、加载驱动</span></span><br><span class="line">        Class.forName(<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>); <span class="comment">//固定写法，加载驱动</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//2、用户信息和url</span></span><br><span class="line">        <span class="comment">//useUnicode=true   支持中文编码</span></span><br><span class="line">        <span class="comment">//&amp; characterEncoding=utf8  设定中文字符集优先</span></span><br><span class="line">        <span class="comment">// &amp; useSSL=ture    使用安全的连接</span></span><br><span class="line">        String url = <span class="string">&quot;jdbc:mysql://localhost:3306/jdbcstudy?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=ture&quot;</span>;</span><br><span class="line">        String username = <span class="string">&quot;root&quot;</span>;</span><br><span class="line">        String password = <span class="string">&quot;010412&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3、连接成功,数据库对象  Connection  代表数据库</span></span><br><span class="line">        Connection connection = DriverManager.getConnection(url, username, password);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4、执行sql语句 Statement   执行sql对象</span></span><br><span class="line">        Statement statement = connection.createStatement();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//5、z执行sql对象， 去 执行sql 可能存在结果，查看返回结果</span></span><br><span class="line">        String sql = <span class="string">&quot;SELECT * FROM users&quot;</span>;</span><br><span class="line"></span><br><span class="line">        ResultSet resultSet = statement.executeQuery(sql);<span class="comment">//返回的结果集,结果集中封装了我们全部的查询出来的结果</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (resultSet.next()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;id=&quot;</span> + resultSet.getObject(<span class="string">&quot;id&quot;</span>));</span><br><span class="line">            System.out.println(<span class="string">&quot;name=&quot;</span> + resultSet.getObject(<span class="string">&quot;NAME&quot;</span>));</span><br><span class="line">            System.out.println(<span class="string">&quot;pwd=&quot;</span> + resultSet.getObject(<span class="string">&quot;PASSWORD&quot;</span>));</span><br><span class="line">            System.out.println(<span class="string">&quot;email=&quot;</span> + resultSet.getObject(<span class="string">&quot;email&quot;</span>));</span><br><span class="line">            System.out.println(<span class="string">&quot;birth=&quot;</span> + resultSet.getObject(<span class="string">&quot;birthday&quot;</span>));</span><br><span class="line">            System.out.println(<span class="string">&quot;===============================================&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//6、释放连接</span></span><br><span class="line">        resultSet.close();</span><br><span class="line">        statement.close();</span><br><span class="line">        connection.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>步骤总结：</p>
+</blockquote>
+<p>1、加载驱动</p>
+<p>2、连接数据库DiverManager</p>
+<p>3、获得执行sql的对象    Statement</p>
+<p>4、获得返回的结果集</p>
+<p>5、释放连接</p>
+<blockquote>
+<p>DirverManaher</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//DriverManager.registerDriver(new com.mysql.jdbc.Driver());</span></span><br><span class="line"><span class="comment">// 原始写法</span></span><br><span class="line"></span><br><span class="line">Class.forName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);<span class="comment">//数据库8.0的用法</span></span><br><span class="line"><span class="comment">//Class.forName(&quot;com.mysql.jdbc.Driver&quot;); //固定写法，加载驱动（常用）数据库5.7的用法</span></span><br><span class="line"></span><br><span class="line">Connection connection = DriverManager.getConnection(url, username, password);</span><br><span class="line"><span class="comment">//connection	代表数据库</span></span><br><span class="line"><span class="comment">//数据库设置自动提交</span></span><br><span class="line"><span class="comment">//事务提交</span></span><br><span class="line"><span class="comment">//事务回滚</span></span><br><span class="line">connection.rollback();</span><br><span class="line">connection.commit();</span><br><span class="line">connection.setAutommit();ResultSet</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<blockquote>
+<p>URL</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String url = <span class="string">&quot;jdbc:mysql://localhost:3306/jdbcstudy?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=TRUE&quot;</span>;</span><br><span class="line"><span class="comment">//jdbc:mysql:协议名称</span></span><br><span class="line"><span class="comment">//mysql 默认端口 3306</span></span><br><span class="line"><span class="comment">//协议://主机地址：端口号/数据库名称？参数1&amp;参数2&amp;参数3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//oralce 默认端口 1521</span></span><br><span class="line"><span class="comment">//jdbc：oracle：thin：@localhost：1521：sid</span></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>Statement 执行sql对象    PrepareStatement执行sql的对象</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String sql = <span class="string">&quot;SELECT * FROM users&quot;</span>;<span class="comment">//编写sql</span></span><br><span class="line"></span><br><span class="line">statement.executeQuery();   <span class="comment">//查询操作返回 ResultSet</span></span><br><span class="line">statement.execute();        <span class="comment">//执行任何sql</span></span><br><span class="line">statement.executeUpdate();  <span class="comment">//更新、插入、删除。都是用这个，返回一个受影响的行数</span></span><br><span class="line">statement.executeBatch();   <span class="comment">//放多个sql同时执行</span></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ResultSet 查询的结果集：封装了所有的查询结果集</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>获取指定的数据类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在不知道类型时使用getObject</span></span><br><span class="line">resultSet.getObject();</span><br><span class="line"><span class="comment">//在知道类型时使用指定类型</span></span><br><span class="line">resultSet.getString();</span><br><span class="line">resultSet.getInt();</span><br><span class="line">resultSet.getFloat();</span><br><span class="line">resultSet.getDouble();</span><br><span class="line">resultSet.getDate();</span><br><span class="line">.....</span><br></pre></td></tr></table></figure>
+
+
+
+<p>遍历、指针</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">resultSet.beforeFirst();    <span class="comment">//移动到最前面</span></span><br><span class="line">resultSet.afterLast();      <span class="comment">//移动到最后面</span></span><br><span class="line">resultSet.next();           <span class="comment">//移动到下一个</span></span><br><span class="line">resultSet.previous();       <span class="comment">//移动到前一行</span></span><br><span class="line">resultSet.absolute(row);    <span class="comment">//移动到指定行</span></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>释放资源</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//6、释放连接</span></span><br><span class="line">resultSet.close();</span><br><span class="line">statement.close();</span><br><span class="line">connection.close();</span><br></pre></td></tr></table></figure>
+
+
+
+
           
         
       
